@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The CGPA Formula Explained – GradeCalc</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/cgpa-formula" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">GradeCalc</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link">CGPA Calculator</a>
+        <a href="cgpa-information.html" class="nav-link active">CGPA Information</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link">CGPA Calculator</a>
+      <a href="cgpa-information.html" class="mobile-nav-link">CGPA Information</a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="blog-page-wrap">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="cgpa-information.html">CGPA Information</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>The CGPA Formula Explained</span>
+    </nav>
+
+    <article class="blog-article">
+
+<h1>The CGPA Formula Explained</h1>
+<span class="pub-date">Published on: 15/03/2026</span>
+
+<h2>Why Is There a Formula for CGPA?</h2>
+<p>You might be thinking - why do we even need a formula? Can't we just add up all our grades and divide by the number of subjects? That seems simple enough, right?</p>
+
+<p>Actually, that method has a big flaw. It treats every subject as if it is equally important - but that is not how university works. A subject worth 4 credits takes up much more of your time, energy, and study hours than a 1-credit subject. Treating them the same way would give you an unfair and inaccurate result.</p>
+
+<p>This is why <a href="https://cgpacalculator.dev/" title="CGPA Calculator">CGPA</a> uses something called a weighted average. The formula makes sure that heavier subjects count for more in your final score. Once you understand each part of the formula, it will feel completely logical - let's break it down together.</p>
+
+<h2>The CGPA Formula - Written Simply</h2>
+<p>Here is the official CGPA formula that universities around the world use:</p>
+<p><strong>CGPA = Sum of (Grade Point × Credits) ÷ Sum of All Credits</strong></p>
+
+<p>That's it. At its heart, the formula has just two parts - a top half and a bottom half. You divide the top by the bottom and you get your CGPA.</p>
+
+<h2>Understanding Each Part of the Formula</h2>
+
+<div class="table-responsive"><table>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>What It Means in Plain English</th>
+</tr>
+<tr>
+<td>GP_i</td>
+<td>Grade Point</td>
+<td>The number value of your letter grade in one subject (e.g. A = 4.0)</td>
+</tr>
+<tr>
+<td>C_i</td>
+<td>Credit Hours</td>
+<td>How many credits that subject is worth (e.g. 3 credits, 4 credits)</td>
+</tr>
+<tr>
+<td>GP_i × C_i</td>
+<td>Quality Points</td>
+<td>Grade Point multiplied by Credits - the 'weighted score' for one subject</td>
+</tr>
+<tr>
+<td>Sum (top)</td>
+<td>Total Quality Points</td>
+<td>Add up all the quality points from every subject you have studied</td>
+</tr>
+<tr>
+<td>Sum (bottom)</td>
+<td>Total Credit Hours</td>
+<td>Add up all the credits from every subject you have studied</td>
+</tr>
+</table></div>
+
+<p>💡 Think of it this way: Quality Points are like 'weighted scores'. A great grade in a big subject earns you more quality points than the same grade in a tiny subject. The formula simply averages those weighted scores.</p>
+
+<h2>Part 1 - The Top Half (Total Quality Points)</h2>
+<p>For each subject, calculate Quality Points:</p>
+<p><strong>Quality Points = Grade Point × Credit Hours</strong></p>
+
+<ul>
+<li>A scored A (4.0) in a 4-credit Maths class → 4.0 × 4 = 16.0 quality points</li>
+<li>A scored B (3.0) in a 3-credit History class → 3.0 × 3 = 9.0 quality points</li>
+<li>A scored A- (3.7) in a 2-credit English class → 3.7 × 2 = 7.4 quality points</li>
+</ul>
+
+<p>Add all quality points together - that sum becomes the top half of the formula.</p>
+<p>📌 Key Insight: A 4-credit core subject impacts your CGPA twice as much as a 2-credit elective - even if you get the same grade.</p>
+
+<h2>Part 2 - The Bottom Half (Total Credit Hours)</h2>
+<p>Add all credit hours from every subject. Example:</p>
+<p>4 + 3 + 3 + 2 + 3 = 15 Total Credit Hours</p>
+
+<h2>What Happens If You Fail a Subject?</h2>
+<p>If you get an F grade, grade point = 0. Credit hours still count in denominator. ⚠️ Failing a 4-credit subject adds 0 to the top but 4 to the bottom - CGPA drops.</p>
+
+<h2>What Happens If You Withdraw From a Subject?</h2>
+<p>Withdrawn courses marked 'W' usually are excluded from both top and bottom - not counted in CGPA.</p>
+
+<h2>A Full Step-by-Step Example</h2>
+<div class="table-responsive"><table>
+<tr>
+<th>Subject</th>
+<th>Credits</th>
+<th>Grade</th>
+<th>Grade Point</th>
+<th>Quality Points (GP × C)</th>
+</tr>
+<tr>
+<td>Advanced Calculus</td>
+<td>4</td>
+<td>A</td>
+<td>4.0</td>
+<td>16.0</td>
+</tr>
+<tr>
+<td>Physics Lab</td>
+<td>1</td>
+<td>B</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>English Composition</td>
+<td>3</td>
+<td>A-</td>
+<td>3.7</td>
+<td>11.1</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td>8</td>
+<td></td>
+<td></td>
+<td>30.1</td>
+</tr>
+</table></div>
+
+<p>Now apply formula:</p>
+<p><strong>CGPA = 30.1 ÷ 8 = 3.7625 → Rounded: 3.76</strong></p>
+
+<h2>Does the Formula Change Across Different Grading Systems?</h2>
+
+<div class="table-responsive"><table>
+<tr>
+<th>Scale</th>
+<th>Max Value</th>
+<th>Where It Is Used</th>
+<th>Grading Style</th>
+</tr>
+<tr>
+<td>4.0 Scale</td>
+<td>4.0</td>
+<td>USA, Canada, UK, Europe</td>
+<td>Fixed percentage cutoffs</td>
+</tr>
+<tr>
+<td>10.0 Scale</td>
+<td>10.0</td>
+<td>India (IITs, NITs, most universities)</td>
+<td>Relative or fixed grading</td>
+</tr>
+<tr>
+<td>5.0 Scale</td>
+<td>5.0</td>
+<td>Parts of Europe and Africa</td>
+<td>Varies by institution</td>
+</tr>
+</table></div>
+
+<p>🌍 Note: Conversion between scales must follow official institutional charts.</p>
+
+<h2>Special Cases to Watch Out For</h2>
+<ul>
+<li><strong>Transfer Credits:</strong> May or may not be included in CGPA depending on institution.</li>
+<li><strong>Repeated Courses:</strong> Grade replacement policies vary.</li>
+<li><strong>Incomplete Grades:</strong> Temporary grades ('I') are excluded until finalized.</li>
+</ul>
+
+<h2>How to Verify Your Own CGPA Manually</h2>
+<ol>
+<li>List all subjects with grade, grade point, and credit hours.</li>
+<li>Multiply grade point × credit hours for each subject.</li>
+<li>Add all quality points.</li>
+<li>Add all credit hours.</li>
+<li>Divide total quality points by total credit hours.</li>
+<li>Round to two decimal places - that is your CGPA.</li>
+</ol>
+
+<h2>Quick Recap of the Formula</h2>
+<p><strong>CGPA = Sum of (Grade Point × Credits) ÷ Sum of All Credits</strong></p>
+<ul>
+<li>Top = all grade points × credits, summed</li>
+<li>Bottom = all credit hours summed</li>
+<li>Failing subject adds 0 top, credits to bottom</li>
+<li>Withdrawn subject excluded from both</li>
+<li>Works on any grading scale - 4.0, 10.0, 5.0</li>
+</ul>
+
+<p>💡 Final Thought: The CGPA formula is not complicated - it is just fair. It rewards consistent performance and gives one honest number representing your entire academic journey.</p>
+
+</article>
+
+    <a href="cgpa-information.html" class="back-link">
+      ← Back to All Guides
+    </a>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">◈ GradeCalc</div>
+        <div class="footer-author">Mohammad Nasir</div>
+        <div class="footer-bio">Professional tools builder &amp; SEO expert</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contact-label">Contact</div>
+        <a href="mailto:mail.me.nasir3@gmail.com" class="footer-email-link">mail.me.nasir3@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 GradeCalc. Built with precision.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

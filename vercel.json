@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cgpacalculator.dev"
+        }
+      ],
+      "destination": "https://cgpacalculator.dev/$1",
+      "statusCode": 308
+    }
+  ]
+}

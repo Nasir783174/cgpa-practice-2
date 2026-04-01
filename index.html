@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CGPA Calculator – Fast and Accurate CGPA Results</title>
+  <link rel="canonical" href="https://cgpacalculator.dev/" />
+  <meta name="description" content="Free online CGPA calculator with multi-semester support, SGPA target prediction, and PDF export." />
+  <meta name="google-site-verification" content="euvaC8yQmQ0gEXwuGFXI_nS4S3VFbsI_gxWL7Fpsbpg" />
+  <meta name="msvalidate.01" content="71C0921EC3367979D0DF5595EA15F657" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-31G4QMCRXB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-31G4QMCRXB');
+  </script>
+  <meta property="og:title" content="CGPA Calculator – Fast and Accurate CGPA Results" />
+  <meta property="og:description" content="Free online CGPA calculator with multi-semester support, SGPA target prediction, and PDF export." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgpacalculator.dev/" />
+  <meta property="og:image" content="https://cgpacalculator.dev/cgpa-calculator.webp" />
+  <link rel="icon" type="image/webp" href="cgpa-calculator-logo.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">GradeCalc</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link active">CGPA Calculator</a>
+        <a href="cgpa-information.html" class="nav-link">CGPA Information</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Calculator</a>
+      <a href="cgpa-information.html" class="mobile-nav-link" onclick="closeMobileMenu()">CGPA Information</a>
+    </div>
+  </header>
+
+  <!-- STICKY CGPA BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar-inner">
+      <div class="sticky-item">
+        <span class="sticky-label">CGPA</span>
+        <span class="sticky-val" id="stickyCGPA">0.00</span>
+      </div>
+      <div class="sticky-divider"></div>
+      <div class="sticky-item">
+        <span class="sticky-label">Credits</span>
+        <span class="sticky-val" id="stickyCredits">0</span>
+      </div>
+      <div class="sticky-divider"></div>
+      <div class="sticky-item">
+        <span class="sticky-label">Grade</span>
+        <span class="sticky-val sticky-grade" id="stickyGrade">–</span>
+      </div>
+      <div class="sticky-divider"></div>
+      <div class="sticky-item">
+        <span class="sticky-label">Semesters</span>
+        <span class="sticky-val" id="stickySemesters">1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Academic Performance Tool</p>
+      <h1 class="hero-title">Calculate Your CGPA<br /><em>with Precision</em></h1>
+      <p class="hero-sub">Real-time grade tracking, semester analysis & target planning — all in one place.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="calculator">
+
+    <!-- TOP GRID: SCALE + RESULT -->
+    <section class="top-grid">
+      <div class="top-card" id="scaleCard">
+        <div class="card-label">Grading Scale</div>
+        <h2 class="card-title">Select Scale</h2>
+        <div class="scale-options">
+          <label class="scale-option" id="scaleStandardLabel">
+            <input type="radio" name="scale" value="standard" checked id="scaleStandard" />
+            <div class="scale-option-content">
+              <span class="scale-name">Standard Scale</span>
+              <span class="scale-desc">A+ → 4.00, A → 3.75…</span>
+            </div>
+          </label>
+          <label class="scale-option" id="scaleNALabel">
+            <input type="radio" name="scale" value="na" id="scaleNA" />
+            <div class="scale-option-content">
+              <span class="scale-name">North American</span>
+              <span class="scale-desc">A → 4.00, A− → 3.70…</span>
+            </div>
+          </label>
+        </div>
+        <div class="scale-preview" id="scalePreview"></div>
+      </div>
+
+      <div class="top-card result-card" id="resultCard">
+        <div class="card-label">Live Result</div>
+        <h2 class="card-title">Overall CGPA</h2>
+        <div class="cgpa-display">
+          <div class="cgpa-big" id="cgpaDisplay">0.00</div>
+          <div class="cgpa-bar-wrap">
+            <div class="cgpa-bar" id="cgpaBar"></div>
+          </div>
+          <div class="cgpa-grade-label" id="cgpaGradeLabel">–</div>
+        </div>
+        <div class="total-credits-row">
+          <div class="stat-box">
+            <span class="stat-label">Total Credits</span>
+            <span class="stat-val" id="totalCredits">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Semesters</span>
+            <span class="stat-val" id="totalSemesters">1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CGPA CALCULATOR -->
+    <section class="calculator-section">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Semester-wise</span>
+          <h2 class="section-title">CGPA Calculator</h2>
+        </div>
+      </div>
+      <div id="semestersContainer"></div>
+      <button class="btn-add-semester" id="addSemesterBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add Semester
+      </button>
+    </section>
+
+    <!-- TARGET CGPA (standalone — between calculator and sgpa) -->
+    <div class="top-card target-card-standalone" id="targetCard">
+      <div class="card-label">Goal Planning</div>
+      <h2 class="card-title">Target CGPA</h2>
+      <div class="target-form">
+        <div class="target-field">
+          <label>Current CGPA</label>
+          <input type="number" id="currentCGPA" min="0" max="4" step="0.01" placeholder="Auto-filled" />
+        </div>
+        <div class="target-field">
+          <label>Target CGPA</label>
+          <input type="number" id="targetCGPA" min="0" max="4" step="0.01" placeholder="e.g. 3.75" />
+        </div>
+        <div class="target-field">
+          <label>Remaining Credits</label>
+          <input type="number" id="remainingCredits" min="0" step="1" placeholder="e.g. 30" />
+        </div>
+        <div class="target-result" id="targetResult">
+          <span class="target-label">Required GPA</span>
+          <span class="target-val" id="requiredGPA">–</span>
+        </div>
+      </div>
+      <button class="btn-pdf" id="downloadPDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF Report
+      </button>
+    </div>
+
+    <!-- SGPA → CGPA -->
+    <section class="sgpa-section">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Quick Conversion</span>
+          <h2 class="section-title">SGPA → CGPA</h2>
+        </div>
+        <div class="sgpa-cgpa-result">
+          <span class="sgpa-label">CGPA</span>
+          <span class="sgpa-val" id="sgpaCGPA">0.00</span>
+        </div>
+      </div>
+      <div class="sgpa-table-wrap">
+        <div class="sgpa-table-header">
+          <span>Semester</span>
+          <span>SGPA</span>
+          <span></span>
+        </div>
+        <div id="sgpaRowsContainer"></div>
+      </div>
+      <button class="btn-add-row" id="addSGPARow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add Row
+      </button>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section class="info-section" id="info">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Knowledge Base</span>
+          <h2 class="section-title">CGPA Information</h2>
+        </div>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">◎</div>
+          <h3>What is CGPA?</h3>
+          <p>Cumulative Grade Point Average (CGPA) is the overall measure of a student's academic performance across all semesters, calculated as a weighted average of grade points.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">◉</div>
+          <h3>How is it calculated?</h3>
+          <p>CGPA = Σ(Grade Point × Credit Hours) ÷ Σ(Total Credit Hours). Each course's grade point is multiplied by its credit weight, then averaged across all semesters.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">◈</div>
+          <h3>Why does it matter?</h3>
+          <p>A strong CGPA opens doors to scholarships, higher studies, and competitive jobs. Many universities and employers use CGPA as an initial screening benchmark.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">◈ GradeCalc</div>
+        <div class="footer-author">Mohammad Nasir</div>
+        <div class="footer-bio">Professional tools builder & SEO expert</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 GradeCalc. Built with precision.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
