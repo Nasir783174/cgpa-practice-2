@@ -524,6 +524,20 @@ function init() {
   if (calcSection) observer.observe(calcSection);
 
   recalcAll();
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", function () {
+      const isOpen = this.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".faq-question").forEach(b => {
+        b.setAttribute("aria-expanded", "false");
+        b.nextElementSibling.classList.remove("open");
+      });
+      if (!isOpen) {
+        this.setAttribute("aria-expanded", "true");
+        this.nextElementSibling.classList.add("open");
+      }
+    });
+  });
 }
 
 document.addEventListener("DOMContentLoaded", init);
